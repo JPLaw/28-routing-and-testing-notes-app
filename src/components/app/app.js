@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Dashboard from '../dashboard/dashboard';
 import './app.scss';
 
@@ -10,18 +10,23 @@ export default class App extends React.Component {
         <BrowserRouter>
           <div>
             <header>
-              <h1>To Do</h1>
+              <h1>To Do App</h1>
               <nav>
                 <ul>
                   <li><Link to="/">Home</Link></li>
-                  <li><Link to="/Dashboard">My Dashboard</Link></li>
+                  <li><Link to="/dashboard">My Dashboard</Link></li>
                 </ul>
               </nav>
             </header>
             <Route
               exact
               path="/"
-              component={() => <h1>You are HOME</h1>}
+              component={() => <h2>Welcome!</h2>}
+            />
+            <Route
+              exact
+              path="/dashboard"
+              component={Dashboard}
             />
           </div>
         </BrowserRouter>

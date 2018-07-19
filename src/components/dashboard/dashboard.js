@@ -1,7 +1,7 @@
 import React from 'react';
 import uuid from 'uuid/v4';
 import NoteForm from '../note-form/note-form';
-import './dashboard';
+import './dashboard.scss';
 
 export default class Dashboard extends React.Component {
   constructor(props) {
@@ -20,27 +20,30 @@ export default class Dashboard extends React.Component {
 
     note.createdOn = new Date();
     note._id = uuid();
+    
     return this.setState((previousState) => {
       return {
-        expenses: [...previousState.notes, note], 
+        notes: [...previousState.notes, note], 
         error: null,
       };
     });
   }
 
-  handleNotesList = () => {
+  handleNotesList = () => { 
     return (
-      <ul>
+      <div className="notes">
         {
           this.state.notes.map((note) => {
             return (
-              <li key={note._id}>
-              {note.title} : ${note.price}
-              </li>
+              <div key={note._id} className="note-added">
+              <h2 className="note-title">{note.title}</h2> 
+              
+               <p className="note-content">{note.content}</p>
+              </div>
             );
           })
         }
-      </ul>
+      </div>
     );
   }
 
@@ -56,3 +59,5 @@ export default class Dashboard extends React.Component {
     );
   }
 }
+
+// removeNote() here
