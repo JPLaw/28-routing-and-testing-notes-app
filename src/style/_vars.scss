@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Acme|Shadows+Into+Light"');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
 
 $color-error: #ff0000;
 $color-secondary: #F0DCB6;
@@ -10,12 +10,17 @@ $color-lightgrey: #B5BAC3;
 $color-grey: #7A7D84;
 $color-darkgrey: #6E7177;
 $color-darkcyan: #008b8b;
+$color-ivory: #f4e8c1;
+$color-azulverde: #a0c1b8;
+$color-bolivia: #709fb0;
+$color-jacaranda: #726a95;
+$color-malbec: #351f39;
 
 $pad: 0.5em;
 
-$acme-font: 'Acme', sans-serif;
+// $quicksand-font: 'Quicksand', sans-serif;
 $shadow-font: 'Shadows Into Light', cursive;
-$font-primary: 'Lato', sans-serif;
-$font-secondary: 'Roboto Mono', monospace;
+$font-primary: 'Quicksand', sans-serif;
+// $font-secondary: 'Roboto Mono', monospace;
 
 $bg-texture: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");

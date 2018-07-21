@@ -20,6 +20,8 @@ export default class Dashboard extends React.Component {
 
     note.createdOn = new Date();
     note._id = uuid();
+    note.editing = false;
+    note.completed = false;
     
     return this.setState((previousState) => {
       return {

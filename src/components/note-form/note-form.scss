@@ -1,0 +1,43 @@
+// form
+label {
+  font-size: 1.25em;
+  font-weight: bolder;
+  margin-bottom: $pad;
+}
+
+textarea, input {
+  background: $color-white;
+  border: none;
+  padding: 15px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  transition: 350ms all;
+
+  &:focus {
+    background: $color-ivory;
+    color: $color-white;
+  }
+
+  &::placeholder {
+    color: $color-lightgrey;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+button,input[type="submit"] {
+  background: $color-bolivia;
+  padding: $pad;
+  border: none;
+  border-radius: 3px;
+
+  &:hover {
+    background: $color-jacaranda;
+  }
+
+  &:active {
+    background: $color-jacaranda;
+  }
+}

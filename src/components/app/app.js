@@ -10,19 +10,20 @@ export default class App extends React.Component {
         <BrowserRouter>
           <div>
             <header>
-              <h1>To Do App</h1>
-              <nav>
-                <ul>
+              <h1>My To Do List</h1>
+              <nav className="nav">
+                {/* <ul> */}
                   <li><Link to="/">Home</Link></li>
                   <li><Link to="/dashboard">My Dashboard</Link></li>
-                </ul>
+                {/* </ul> */}
               </nav>
             </header>
             <Route
               exact
               path="/"
-              component={() => <h2>Welcome!</h2>}
-            />
+              component={() => <h3>Welcome</h3>
+               }
+               />
             <Route
               exact
               path="/dashboard"
