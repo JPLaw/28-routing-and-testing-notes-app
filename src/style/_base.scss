@@ -1,8 +1,10 @@
 @import "vars";
 
-nav {
+.nav {
   display: inline;
+  margin-left: $pad * 2;
 }
+
 // content
 html, body {
   position: relative; 
@@ -81,17 +83,8 @@ button,input[type="submit"] {
   }
 }
 
-footer {
-  height: 40px;
-  background: #000;
-  border-top: solid 5px #fff;
-  margin-top: 100px;
-}
 
 // lists
 ul,ol,li { margin-left: $pad * 2; }
-li { display: list-item; }
+li { display: inline-block; }
 ul li { list-style: none; }
-ol li { list-style: decimal; }
-ol ol li , ul ol li { list-style: lower-alpha; }
-ol ul li , ul ul li { list-style: square; }
