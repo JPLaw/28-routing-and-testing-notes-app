@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Dashboard from '../dashboard/dashboard';
+import Landing from '../landing/landing';
 import './app.scss';
 
 export default class App extends React.Component {
@@ -21,8 +22,8 @@ export default class App extends React.Component {
             <Route
               exact
               path="/"
-              component={() => <h3>Welcome </h3>
-               }
+              // component={() => <h3>Welcome </h3>}
+              component={Landing}
                />
             <Route
               exact

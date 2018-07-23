@@ -20,12 +20,14 @@ describe('Dashboard testing', () => {
   });
 
   test('Adding a new note to the state', () => {
-    const mockNote = [{ title: 'fake', content: 'This is my new note', _id: '1234' }];
+    const mockNote = { 
+      title: 'fake', 
+      content: 'This is my new note', 
+      _id: '1234',
+    };
     mountedDashboard.setState({ notes: mockNote });
     expect(mountedDashboard.state('notes')).toEqual(mockNote);
     expect(mountedDashboard.state('notes')).toHaveLength(1);
     expect(mountedDashboard.find('p').text()).toEqual('This is my new note');
   });
-
-  // test('')
 });

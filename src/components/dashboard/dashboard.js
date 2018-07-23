@@ -1,6 +1,7 @@
 import React from 'react';
 import uuid from 'uuid/v4';
 import NoteForm from '../note-form/note-form';
+import NoteList from '../note-list/note-list';
 import './dashboard.scss';
 
 export default class Dashboard extends React.Component {
@@ -29,6 +30,11 @@ export default class Dashboard extends React.Component {
         error: null,
       };
     });
+  }
+
+  removeNote(_id) {
+    const updatedNotes = this.state.notes.filter(note => note._id !== _id);
+    this.setState({ notes: updatedNotes });
   }
 
   handleNotesList = () => { 
@@ -61,5 +67,3 @@ export default class Dashboard extends React.Component {
     );
   }
 }
-
-// removeNote() here
