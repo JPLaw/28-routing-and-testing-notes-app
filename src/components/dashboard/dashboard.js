@@ -32,26 +32,30 @@ export default class Dashboard extends React.Component {
     });
   }
 
-  removeNote(_id) {
-    const updatedNotes = this.state.notes.filter(note => note._id !== _id);
-    this.setState({ notes: updatedNotes });
+  handleRemoveNote(noteToRemove) {
+    this.setState((previousState) => {
+      return {
+        note: previousState.notes.filter(note => note._id !== noteToRemove._id),
+      };
+    });
   }
 
   handleNotesList = () => { 
     return (
-      <div className="notes">
+      <ul>
         {
           this.state.notes.map((note) => {
             return (
-              <div key={note._id} className="note-added">
-              <h2 className="note-title">{note.title}</h2> 
+              <li key={note._id}>
+              <h3 className="note-title">{note.title}</h3> 
               
                <p className="note-content">{note.content}</p>
-              </div>
+               <button className="remove-button" onClick={this.handleRemoveNote}>Remove Note</button>
+              </li>
             );
           })
         }
-      </div>
+      </ul>
     );
   }
 

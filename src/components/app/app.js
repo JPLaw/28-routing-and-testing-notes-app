@@ -7,12 +7,12 @@ import './app.scss';
 export default class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="app">
         <BrowserRouter>
           <div>
             <header>
               <h1>My To Do List</h1>
-              <nav className="nav">
+              <nav>
                 <ul>
                   <li><Link to="/">Home</Link></li>
                   <li><Link to="/dashboard">My Dashboard</Link></li>

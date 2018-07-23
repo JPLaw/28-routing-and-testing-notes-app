@@ -33,17 +33,17 @@ export default class NoteForm extends React.Component {
           <input 
             type="text"
             name="title"
+            placeholder="title"
             value={ this.state.title }
             onChange={ this.handleChange }
-            placeholder="title"
           />
           <label>About your note</label>
           <input
             type="text"
             name="content"
+            placeholder="details"
             value={this.state.content}
             onChange={this.handleChange }
-            placeholder="details"
           />
         <button type="submit">Create Note</button>
       </form>
@@ -54,4 +54,5 @@ export default class NoteForm extends React.Component {
 
 NoteForm.propTypes = {
   handleAddNote: PropTypes.func,
+  handleRemoveNote: PropTypes.func,
 };
