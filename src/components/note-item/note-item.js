@@ -10,7 +10,7 @@ export default class NoteItem extends React.Component {
   }
   
   handleClick() {
-    this.props.handleRemoveNote(this.props.note._id);
+    this.props.handleRemoveNote(this.props.note);
   }
   
   render() {
@@ -19,11 +19,10 @@ export default class NoteItem extends React.Component {
       <li className="note-item">
         <strong>{title}: </strong>
         {content}
-        <input 
+        <button 
           type="button" 
-          value="delete" 
           onClick={ this.handleClick }
-        />
+        >Remove Note</button>
       </li>
     );
   }
