@@ -1,6 +1,7 @@
 import React from 'react';
 import uuid from 'uuid/v4';
 import NoteForm from '../note-form/note-form';
+import NoteItem from '../note-item/note-item';
 import NoteList from '../note-list/note-list';
 import './dashboard.scss';
 
