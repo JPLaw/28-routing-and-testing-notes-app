@@ -2,7 +2,6 @@ import React from 'react';
 import uuid from 'uuid/v4';
 import NoteForm from '../note-form/note-form';
 import NoteItem from '../note-item/note-item';
-import NoteList from '../note-list/note-list';
 import { renderIf } from '../../lib/utils';
 import './dashboard.scss';
 
@@ -69,20 +68,6 @@ export default class Dashboard extends React.Component {
       </div>
     );
   }
-
-  // render() {
-  //   return (
-  //     <section className="dashboard">
-  //     <NoteForm handleAddNote={ this.handleAddNote } />
-  //     {
-  //       this.state.error && <h2 className="error">Please enter a title</h2>
-  //     }
-  //     <NoteList
-  //     notes= {this.state.notes}
-  //     handleRemoveNote = {this.handleRemoveNote}/>
-  //     </section>
-  //   );
-  // }
 
 
 render() {
