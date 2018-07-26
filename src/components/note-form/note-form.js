@@ -4,17 +4,19 @@ import PropTypes from 'prop-types';
 const defaultState = {
   title: '',
   content: '',
+  completed: false,
+  editing: false,
 };
 
 export default class NoteForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = defaultState;
-  }
+    this.state = props.note ? props.note : defaultState;
+    }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.handleAddNote(this.state);
+    this.props.handleComplete(this.state);
     this.setState(defaultState);
   }
 
@@ -27,6 +29,8 @@ export default class NoteForm extends React.Component {
 
   render() {
     const buttonText = this.props.note ? 'Update Note' : 'Create Note';
+    const title = this.props.note ? 'updateTitle' : 'title';
+    const content = this.props.note ? 'updateContent' : 'content';
     return (
       <div className="note-list">
         <label>Add a new note</label>
@@ -37,7 +41,7 @@ export default class NoteForm extends React.Component {
             placeholder="title"
             value={ this.state.title }
             onChange={ this.handleChange }
-            data-cy="title"
+            data-cy= {title}
           />
           <label>About your note</label>
           <input
@@ -46,9 +50,9 @@ export default class NoteForm extends React.Component {
             placeholder="details"
             value={this.state.content}
             onChange={this.handleChange }
-            data-cy="content"
+            data-cy= {content}
           />
-        <button type="submit">{buttonText}</button>
+        <button type="submit" data-cy="note-form-submit">{buttonText}</button> 
       </form>
     </div>
     );
@@ -56,7 +60,7 @@ export default class NoteForm extends React.Component {
 }
 
 NoteForm.propTypes = {
-  handleAddNote: PropTypes.func,
+  handleComplete: PropTypes.func,
   handleRemoveNote: PropTypes.func,
   note: PropTypes.object,
 };

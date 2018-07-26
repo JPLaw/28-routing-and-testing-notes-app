@@ -3,6 +3,7 @@ import uuid from 'uuid/v4';
 import NoteForm from '../note-form/note-form';
 import NoteItem from '../note-item/note-item';
 import NoteList from '../note-list/note-list';
+import { renderIf } from '../../lib/utils';
 import './dashboard.scss';
 
 export default class Dashboard extends React.Component {
@@ -51,35 +52,48 @@ export default class Dashboard extends React.Component {
 
   handleNotesList = () => {
     return (
-      <ul>
+      <div>
         {
           this.state.notes.map((note) => {
             return (
-              <li key={note._id}>
+              <div className="note-post" key={note._id}>
                 <NoteItem 
                   note={note}
-                  handleRemoveNote={this.handleRemoveNote}
                   handleUpdateNote={this.handleUpdateNote}
-                />
-              </li>
+                  handleRemoveNote={this.handleRemoveNote}
+                  />
+              </div>
             );
           })
         }
-      </ul>
+      </div>
     );
   }
 
-  render() {
-    return (
-      <section className="dashboard">
-      <NoteForm handleAddNote={ this.handleAddNote } />
+  // render() {
+  //   return (
+  //     <section className="dashboard">
+  //     <NoteForm handleAddNote={ this.handleAddNote } />
+  //     {
+  //       this.state.error && <h2 className="error">Please enter a title</h2>
+  //     }
+  //     <NoteList
+  //     notes= {this.state.notes}
+  //     handleRemoveNote = {this.handleRemoveNote}/>
+  //     </section>
+  //   );
+  // }
+
+
+render() {
+  return (
+    <section className="dashboard">
+      <NoteForm handleComplete={ this.handleAddNote } />
       {
-        this.state.error && <h2 className="error">Please enter a title</h2>
+        renderIf(this.state.error && <h2 className="error">Please enter a note title.</h2>)
       }
-      <NoteList
-      notes= {this.state.notes}
-      handleRemoveNote = {this.handleRemoveNote}/>
-      </section>
-    );
-  }
+      { this.handleNotesList() }
+    </section>
+  );
+}
 }

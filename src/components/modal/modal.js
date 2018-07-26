@@ -9,7 +9,7 @@ export default class Modal extends React.Component {
     return (
       <div className={showHiddenClassName} data-cy="modal">
         <main className="modal-main">
-        <button onClick={this.props.closeModal} className="close-button">X</button>
+          <button onClick={this.props.handleClose} className="close-button">X</button>
         {this.props.children}
         </main>
       </div>
@@ -19,6 +19,6 @@ export default class Modal extends React.Component {
 
 Modal.propTypes = {
   show: PropTypes.bool,
-  closeModal: PropTypes.func,
+  handleClose: PropTypes.func,
   children: PropTypes.node,
 };
