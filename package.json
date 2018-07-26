@@ -15,8 +15,8 @@
     "test-nolint": "jest --coverage",
     "watch": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "lint": "eslint --fix .", 
-    "cypress: open": "cypress open"
+    "lint": "eslint --fix .",
+    "cypress:open": "cypress open"
   },
   "keywords": [],
   "author": "",
