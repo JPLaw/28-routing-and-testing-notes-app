@@ -14,34 +14,34 @@ describe('Testing note app with full-CRUD operations', () => {
     
     cy.get('button[data-cy=note-form-submit]').click();
 
-    cy.get('div[data-cy=note-item]').dblclick();
+    cy.get('div[data-cy=note-item]').click();
 
-    // cy.get('[data-cy=modal] input[data-cy=updateTitle]')
-    //   .clear()
-    //   .type('updated note title');
+    cy.get('[data-cy=modal] input[data-cy=updateTitle]')
+      .clear()
+      .type('updated note title');
 
-    // cy.get('[data-cy=modal] textarea[data-cy=updateContent]')
-    //   .clear()
-    //   .type('updated note content')
-    //   .should('have.value', 'updated note content');
+    cy.get('[data-cy=modal] input[data-cy=updateContent]')
+      .clear()
+      .type('updated note content')
+      .should('have.value', 'updated note content');
     
-    // cy.get('[data-cy=modal] textarea[data-cy=updateContent]')
-    //   .clear()
-    //   .type('This is an updated note')
-    //   .should('have.value', 'This is an updated note');
+    cy.get('[data-cy=modal] input[data-cy=updateContent]')
+      .clear()
+      .type('This is an updated note')
+      .should('have.value', 'This is an updated note');
 
-    // cy.get('[data-cy=modal] form[data-cy=note-form]').submit();
+    cy.get('[data-cy=modal] form[data-cy=note-form]').submit();
 
-    cy.get('div[data-cy=note-item] button[data-cy=note-item-delete-btn]').click();
+    cy.get('div[data-cy=note-item] button[data-cy=note-item-del-button]').click();
 
   });
 
-  it('should create 2 items then delete then delete those items', () => {
+  it('should create 2 items then delete them', () => {
     cy.get('input[data-cy=title]')
     .clear()
     .type('First Test- Note Title');
   
-    cy.get('textarea[data-cy=content]')
+    cy.get('input[data-cy=content]')
       .clear()
       .type('First Test- Note Content');
     
@@ -58,7 +58,7 @@ describe('Testing note app with full-CRUD operations', () => {
 
     cy.get('button[data-cy=note-form-submit]').contains('Create Note').click({multiple: true});
 
-    cy.get('button[data-cy=note-item-dlt-btn]').click({multiple: true});
+    cy.get('button[data-cy=note-item-del-button]').click({multiple: true});
 
   })
 });
