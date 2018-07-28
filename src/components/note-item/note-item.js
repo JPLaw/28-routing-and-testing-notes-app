@@ -16,14 +16,18 @@ export default class NoteItem extends React.Component {
   render() {
     const { title, content } = this.props.note;
     return (
+      <div>
       <li className="note-item">
         <strong>{title}: </strong>
+        <b>
         {content}
+        </b>
         <button 
-          type="button" 
+          type="submit" 
           onClick={ this.handleClick }
         >Remove Note</button>
       </li>
+      </div>
     );
   }
 }     

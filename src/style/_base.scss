@@ -10,6 +10,7 @@ html, body {
   position: relative; 
   font-family: $font-primary;
   margin-left: 10%;
+  padding: 1%;
 }
 head, script, link  { display: none; }
 p { display: inline-block; }
@@ -86,5 +87,5 @@ button,input[type="submit"] {
 
 // lists
 ul,ol,li { margin-left: $pad * 2; }
-li { display: inline-block; }
+li { display: inline-block; padding: 1% }
 ul li { list-style: none; }
