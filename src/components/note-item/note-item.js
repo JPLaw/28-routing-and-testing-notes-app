@@ -15,7 +15,7 @@ export default class NoteItem extends React.Component {
     };
     return (
       <div className="note-item" data-cy="note-item" onClick={showModal}>
-      <strong>{note.title}</strong>
+      <strong>{note.title}: </strong>
       <p>{note.content}</p>
       <button
         onClick={() => handleRemoveNote(note) } data-cy="note-item-del-button">
