@@ -26,7 +26,7 @@ export default class NoteItem extends React.Component {
       </li>
     );
   }
-}
+}     
 
 NoteItem.propTypes = {
   note: PropTypes.object,
